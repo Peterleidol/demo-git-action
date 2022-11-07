@@ -1,7 +1,14 @@
 name: hello word
 on: 
   push:
-    branches: [main]
+    paths:
+      - '!README.md'
+      - '**.js'
+    branches: 
+      - 'main'
+      - 'release/**'
+      - '!dev/**'
+  workflow_dispatch:
 jobs:
   say-hello:
     runs-on: ubuntu-latest
